@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { isSupabaseConfigured, supabase } from '@/lib/supabase'
 import type { Product } from '@/lib/types'
 
 type State =
   | { status: 'loading' }
+  | { status: 'unconfigured' }
   | { status: 'ready'; products: Product[] }
   | { status: 'error'; message: string }
 
@@ -12,9 +13,13 @@ type State =
  * only `is_active = true` rows are visible (0002_rls.sql).
  */
 export function useProducts(): State {
-  const [state, setState] = useState<State>({ status: 'loading' })
+  const [state, setState] = useState<State>(() =>
+    isSupabaseConfigured ? { status: 'loading' } : { status: 'unconfigured' },
+  )
 
   useEffect(() => {
+    if (!isSupabaseConfigured || !supabase) return
+
     let active = true
 
     void (async () => {

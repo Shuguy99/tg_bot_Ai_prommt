@@ -23,6 +23,17 @@ export default function App() {
         </div>
       )}
 
+      {state.status === 'unconfigured' && (
+        <div role="alert" className="mt-10 rounded-2xl bg-amber-500/10 p-4 text-sm">
+          <p className="font-medium text-amber-400">Supabase не настроен</p>
+          <p className="mt-2 text-tg-hint">
+            Скопируйте <code>.env.example</code> в <code>.env.local</code> и укажите{' '}
+            <code>VITE_SUPABASE_URL</code> и <code>VITE_SUPABASE_ANON_KEY</code> из
+            проекта Supabase, затем перезапустите dev-сервер.
+          </p>
+        </div>
+      )}
+
       {state.status === 'error' && (
         <div
           role="alert"
