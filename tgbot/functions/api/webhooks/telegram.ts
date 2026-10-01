@@ -155,7 +155,10 @@ async function handleSuccessfulPayment(
   }
 
   if (payment.currency !== 'XTR') {
-    console.error('[telegram-webhook] unexpected currency', { orderId: order.id, payment.currency })
+    console.error('[telegram-webhook] unexpected currency', {
+      orderId: order.id,
+      currency: payment.currency,
+    })
     return
   }
 

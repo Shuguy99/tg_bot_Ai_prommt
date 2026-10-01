@@ -1,7 +1,7 @@
-# Cloudflare Pages Functions: Web Crypto (`crypto.subtle`) needs this to run on
-# the Workers runtime alongside the DOM lib used by the React app.
-#
-#   npx tsc --noEmit -p tsconfig.functions.json
+// Cloudflare Pages Functions: Web Crypto (`crypto.subtle`) needs this to run on
+// the Workers runtime, alongside the DOM lib used by the React app.
+//
+//   npx tsc --noEmit -p tsconfig.functions.json
 {
   "compilerOptions": {
     "target": "ES2022",

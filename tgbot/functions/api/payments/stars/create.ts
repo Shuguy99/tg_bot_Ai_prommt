@@ -1,6 +1,6 @@
-import { createOrder, loadPurchasableProduct, upsertTelegramUser } from '../../_shared/db'
-import { HttpError, json, requireUser, withErrorHandling } from '../../_shared/http'
-import { createStarsInvoiceLink } from '../../_shared/telegram'
+import { createOrder, loadPurchasableProduct, upsertTelegramUser } from '../../../_shared/db'
+import { HttpError, json, requireUser, withErrorHandling } from '../../../_shared/http'
+import { createStarsInvoiceLink } from '../../../_shared/telegram'
 
 interface CreateInvoiceBody {
   product_id?: string

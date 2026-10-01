@@ -152,7 +152,10 @@ async function fulfilFromPayment(paymentId: string): Promise<void> {
   }
 
   if (order.gateway !== 'yookassa') {
-    console.error('[yookassa-webhook] order belongs to another gateway', { orderId, order.gateway })
+    console.error('[yookassa-webhook] order belongs to another gateway', {
+      orderId,
+      gateway: order.gateway,
+    })
     return
   }
 
