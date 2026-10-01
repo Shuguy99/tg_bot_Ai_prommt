@@ -1,0 +1,14 @@
+.env
+.env.local
+*.key
+*.crt
+.DS_Store
+node_modules/
+**/node_modules/
+dist/
+build/
+tmp/
+logs/
+.pgpass
+# Don't commit local Supabase CLI state
+.supabase/

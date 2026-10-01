@@ -1,0 +1,21 @@
+# deps / build
+node_modules/
+dist/
+build/
+.wrangler/
+*.tsbuildinfo
+
+# secrets — never commit
+.env
+.env.*
+!.env.example
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# supabase local state
+supabase/.branches/
+supabase/.temp/
